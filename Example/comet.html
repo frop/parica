@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+        <script src="parica.js"></script>
+        <script type="text/javascript">
+            parica = new Parica('listener.php');
+            
+			$(document).ready(function(){
+				parica.start();
+
+				$(this).bind('parica_received', function(e){
+					$('body').html(e.detail);
+				});
+			});
+        </script>
+    </head>
+    <body>
+        <div id="conteudo"></div>
+    </body>
+</html>
